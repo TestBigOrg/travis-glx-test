@@ -1,7 +1,7 @@
 os: linux
 dist: trusty
 sudo: required
-language: cpp
+language: node
 addons:
   apt:
     packages:
@@ -13,6 +13,7 @@ env:
     - LIBGL_DEBUG: 1
     - EGL_LOG_LEVEL: debug
 script:
+  - sudo apt-get purge fglrx
   - cat /etc/init.d/xvfb
   - sh -e /etc/init.d/xvfb start
   - sleep 2
