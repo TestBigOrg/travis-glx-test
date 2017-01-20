@@ -1,7 +1,7 @@
 os: linux
 dist: trusty
 sudo: required
-language: node
+language: cpp
 addons:
   apt:
     packages:
