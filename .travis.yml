@@ -2,6 +2,10 @@ os: linux
 dist: trusty
 sudo: required
 language: node
+addons:
+  apt:
+    packages:
+     - mesa-utils
 env:
   global:
     - TERM: dumb
