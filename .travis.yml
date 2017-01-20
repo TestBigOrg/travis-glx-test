@@ -13,11 +13,7 @@ env:
     - LIBGL_DEBUG: 1
     - EGL_LOG_LEVEL: debug
 script:
-  - DISPLAY=:99.0 xvfb-run xdpyinfo
-  - cat /etc/init.d/xvfb
-  - sh -e /etc/init.d/xvfb start
+  - start-stop-daemon --start --quiet --pidfile /tmp/cucumber_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1024x768x24 +extension GLX
   - sleep 2
   - export DISPLAY=:99.0
   - glxinfo
-  - xdpyinfo
-
